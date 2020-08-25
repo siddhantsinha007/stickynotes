@@ -1,3 +1,252 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  margin: 0px;
+  background-color: rgb(225, 226, 226);
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: 800;
+  letter-spacing: -3px;
+  line-height: 1;
+  text-shadow: #DDDDDD 4px 2px 0;
+  padding: 8px;
+}
+
+.textStart {
+  text-align: left;
+  word-wrap: break-word;
+}
+
+td {
+  text-align: center;
+}
+
+.reportHeader {
+  z-index: 980;
+  width: 100%;
+  height: 30px;
+  position: fixed;
+  align-content: center;
+}
+
+.searchDiv {
+  background-color: rgb(202, 199, 199);
+  padding: 10px;
+  border: 2px solid Gray;
+  border-bottom-width: 1px;
+  border-left-width: 1px;
+  font-weight: 500;
+  font-size: 14px;
+  color: rgb(87, 86, 86);
+  float: right;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 980;
+  border-radius: 4px;
+  box-shadow: 1px 6px 6px rgba(0, 0, 0, .3), inset 0 -1px 2px -1px rgba(0, 0, 0, .5), inset 0 1px 2px 1px rgba(255, 255, 255, .3);
+}
+
+.hitCountText {
+  color: rgb(25, 26, 25);
+  display: none;
+}
+
+.note {
+  display: inline-block;
+  position: relative;
+  top: 150px;
+  cursor: pointer;
+  z-index: 960;
+  width: 350px;
+  height: 200px;
+  margin: 10px;
+  background-color: rgb(243, 234, 184);
+  background: linear-gradient(top, rgba(0, 0, 0, .05), rgba(0, 0, 0, .25));
+  box-shadow: 5px 5px 10px -2px rgba(33, 33, 33, .3);
+}
+
+.cnt {
+  background-color: transparent;
+  border: none;
+  resize: none;
+  overflow: scroll;
+  width: 320px;
+  padding: 10px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.note:focus {
+  z-index: 970;
+}
+
+.noteHeader {
+  display: block;
+  cursor: pointer;
+  width: 350px;
+  height: 32px;
+  background-color: white;
+  opacity: 0.5;
+  box-shadow: 5px 5px 10px -2px rgba(33, 33, 33, .7);
+}
+
+.note:nth-of-type(2n) {
+  background-color: rgb(230, 144, 180);
+}
+
+.note:nth-of-type(3n) {
+  background-color: rgb(129, 235, 166);
+}
+
+.note:nth-of-type(7n) {
+  background-color: rgb(147, 162, 173);
+}
+
+.note:nth-of-type(8n) {
+  background-color: rgb(127, 219, 233);
+}
+
+.note:nth-of-type(6n) {
+  background-color: rgb(235, 110, 110);
+}
+
+.button {
+  font: bold 14px Helvetica, Arial, sans-serif;
+  color: black;
+  padding: 1em 2em;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: transform .150s, background .5s;
+}
+
+.remove {
+  position: absolute;
+  top: 7px;
+  right: 3px;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  text-align: center;
+  line-height: 16px;
+  padding: 2px;
+  border-color: #B30000;
+  font-style: 1.6em;
+  font-weight: bolder;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.cnt:focus {
+  outline: none;
+  border: none;
+}
+
+.addNotes {
+  top: 10px;
+}
+
+.notesToggle {
+  top: 60px;
+}
+
+.deleteNotes {
+  top: 110px;
+}
+
+.addNotesHeader {
+  width: 100%;
+  height: 100%;
+  padding-top: 9px;
+}
+
+.notesButton {
+  left: 10px;
+  position: fixed;
+  background: rgb(90, 89, 89);
+  color: #ddd;
+  border: 0;
+  font-size: 15px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+  border-radius: 4px;
+  -webkit-transition: .6s;
+  transition: .6s;
+  overflow: hidden;
+  height: 40px;
+  z-index: 980;
+  text-align: center;
+  width: 170px;
+  box-shadow: 1px 6px 6px rgba(0, 0, 0, .3), inset 0 -1px 2px -1px rgba(0, 0, 0, .5), inset 0 1px 2px 1px rgba(255, 255, 255, .3);
+}
+
+.notesButton:hover,
+.clearButton:hover {
+  color: #ffffff;
+  background: #111;
+  cursor: pointer;
+}
+
+.notesButton:hover:before,
+.clearButton:hover:before {
+  -webkit-transform: translateX(300px) skewX(-15deg);
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 0.6;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+
+.notesButton:hover:after,
+.clearButton:hover:after {
+  -webkit-transform: translateX(300px) skewX(-15deg);
+  transform: translateX(300px) skewX(-15deg);
+  opacity: 1;
+  -webkit-transition: .7s;
+  transition: .7s;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 980;
+  left: 190px;
+  top: 10px;
+  background-color: rgb(236, 107, 84);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  color: white;
+  padding: 3px;
+  padding-bottom: 10px;
+  border-radius: 3px;
+  box-shadow: 2px 3px 4px rgba(0, 0, 0, .3), inset 0 -1px 2px -1px rgba(0, 0, 0, .5), inset 0 1px 2px 1px rgba(255, 255, 255, .3);
+  text-align: center;
+}
+
+#heading {
+  margin-top: 10px;
+}
+
+.searchInput {
+  padding: 5px;
+}
+
+.clearButton {
+  font-family: "Raleway", sans-serif;
+  color: #ddd;
+  background: rgb(90, 89, 89);
+  border-radius: 4px;
+  -webkit-transition: .6s;
+  transition: .6s;
+  border: 0;
+  overflow: hidden;
+  padding: 6px;
+  box-shadow: 1px 4px 4px rgba(0, 0, 0, .3), inset 0 -1px 2px -1px rgba(0, 0, 0, .5), inset 0 1px 2px 1px rgba(255, 255, 255, .3);
+}
+
 .App {
   text-align: center;
 }
